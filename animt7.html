@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumigalva</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Orbitron', sans-serif;
+
+            /* 🔥 IMAGEM DE FUNDO */
+            background: url('fundo3.jpg') no-repeat center center fixed;
+            background-size: cover;
+
+            color:#fff;
+        }
+
+        /* camada escura para melhorar leitura */
+        body::before{
+            content:"";
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            z-index:-1;
+        }
+
+        /* HEADER */
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 40px;
+            background:rgba(10,10,10,0.7);
+            border-bottom:2px solid #e6c109;
+            flex-wrap:wrap;
+        }
+
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .text{
+            font-size:24px;
+            text-shadow:0 0 10px #e6c109;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .box{
+            width:25px;
+            height:25px;
+            background:#e6c109;
+            border-radius:5px;
+            animation: moveBox 1s infinite alternate;
+        }
+
+        @keyframes moveBox{
+            from{transform:translateX(0);}
+            to{transform:translateX(30px);}
+        }
+
+        @keyframes glow{
+            from{text-shadow:0 0 10px #e6c109;}
+            to{text-shadow:0 0 25px #ffd700;}
+        }
+
+        nav a{
+            color:#fff;
+            margin-left:20px;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#e6c109;
+        }
+
+        /* HERO */
+        .hero{
+            padding:80px 40px;
+            background:rgba(0,0,0,0.6);
+            margin:20px;
+            border-radius:10px;
+        }
+
+        .hero h1{
+            font-size:42px;
+        }
+
+        .hero p{
+            color:#ccc;
+            margin:20px 0;
+        }
+
+        /* BOTÃO */
+        .btn{
+            padding:12px 25px;
+            background:#e6c109;
+            color:#000;
+            border:none;
+            cursor:pointer;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            box-shadow:0 0 20px #e6c109;
+            transform:scale(1.05);
+        }
+
+        /* SERVIÇOS */
+        .services{
+            padding:60px 40px;
+            background:rgba(0,0,0,0.6);
+            margin:20px;
+            border-radius:10px;
+        }
+
+        .services h2{
+            margin-bottom:30px;
+        }
+
+        .cards{
+            display:flex;
+            gap:20px;
+            flex-wrap:wrap;
+        }
+
+        .card{
+            flex:1 1 250px;
+            background:#1a1a1a;
+            padding:20px;
+            border-radius:10px;
+            text-align:center;
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-10px);
+            box-shadow:0 0 20px #e6c109;
+        }
+
+        .card i{
+            font-size:30px;
+            margin-bottom:15px;
+            color:#e6c109;
+        }
+
+        /* CONTATO */
+        .contact{
+            padding:60px 40px;
+            background:rgba(0,0,0,0.6);
+            margin:20px;
+            border-radius:10px;
+        }
+
+        input, textarea{
+            width:100%;
+            padding:10px;
+            margin:10px 0;
+            border:none;
+            border-radius:5px;
+        }
+
+        /* RESPONSIVO */
+        @media(max-width:768px){
+            header{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+            nav{
+                margin-top:10px;
+            }
+
+            .hero h1{
+                font-size:30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="text">LUMIGALVA-</div>
+        <div class="box"></div>
+    </div>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Produtos</a>
+        <a href="#">Contato</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Bem-vindo visitante.</h1>
+    <p>Este é um site especializado em fabricação de luminárias de ferro e tubos galvanizados...</p>
+    <p>Caso tenha alguma idéia ou desenho da sua criação, entre em contato. Se não tiver, dê uma olhada em nossos produtos .</p>
+    <button class="btn">Saiba mais</button>
+</section>
+
+<section class="services">
+    <h2>Serviços</h2>
+
+    <div class="cards">
+        <div class="card">
+            <i class="fas fa-lightbulb"></i>
+            <h3>Luminárias</h3>
+            <p>Produção artesanal e personalizada.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-tools"></i>
+            <h3>Instalações</h3>
+            <p>Montagem e suporte técnico.</p>
+        </div>
+
+        <div class="card">
+            <i class="fas fa-drafting-compass"></i>
+            <h3>Projetos</h3>
+            <p>Criação sob medida.</p>
+        </div>
+    </div>
+</section>
+
+<section class="contact">
+    <h2>Contato</h2>
+    <input type="text" placeholder="Seu nome">
+    <input type="email" placeholder="Seu email">
+    <textarea placeholder="Sua mensagem"></textarea>
+    <button class="btn">Enviar</button>
+</section>
+
+</body>
+</html>
