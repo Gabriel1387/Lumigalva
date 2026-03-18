@@ -8,35 +8,63 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 
 <style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
 body{
     font-family:'Orbitron', sans-serif;
-    background:url('logo2.jpg') no-repeat center center fixed ;
-            background-size: cover;
+    background:url('logo2.jpg') no-repeat center center fixed;
+    background-size: cover;
     color:#fff;
+
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
+    min-height:100vh;
+    padding:20px;
+}
+
+/* fundo escuro pra legibilidade */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    z-index:-1;
 }
 
 .container{
+    width:100%;
+    max-width:400px;
     text-align:center;
+    background:rgba(0,0,0,0.7);
+    padding:25px;
+    border-radius:15px;
 }
 
 h1{
-    margin-bottom:30px;
+    margin-bottom:25px;
     text-shadow:0 0 10px #e6c109;
+    font-size:28px;
 }
 
 a{
     display:block;
-    margin:15px 0;
+    width:100%;
+    margin:12px 0;
     padding:15px;
     background:#1a1a1a;
     color:#fff;
     text-decoration:none;
     border-radius:10px;
     transition:0.3s;
+    font-size:16px;
 }
 
 a:hover{
@@ -44,20 +72,18 @@ a:hover{
     color:#000;
     transform:scale(1.05);
 }
-    /* RESPONSIVO */
-        @media(max-width:768px){
-            header{
-                flex-direction:column;
-                align-items:flex-start;
-            }
 
-            nav{
-                margin-top:10px;
-            }
+/* RESPONSIVO EXTRA */
+@media(max-width:480px){
+    h1{
+        font-size:22px;
+    }
 
-            .hero h1{
-                font-size:30px;
-            }
+    a{
+        padding:14px;
+        font-size:15px;
+    }
+}
 </style>
 </head>
 
@@ -66,7 +92,7 @@ a:hover{
 <div class="container">
     <h1>LUMIGALVA</h1>
 
-    <a href="https://wa.me/5599999999999" class="btn"">📲 WhatsApp</a> 
+    <a href="https://wa.me/5599999999999">📲 WhatsApp</a> 
     <a href="https://www.instagram.com/lumigalva/">📸 Instagram</a>
     <a href="#">🛒 Mercado Livre</a>
     <a href="animt7.html">⬅ Voltar</a>
