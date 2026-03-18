@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Lumigalva</title>
+
+<!-- Fonte -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Orbitron', sans-serif;
+    background-color:#000000;
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    overflow:hidden;
+    flex-direction:column;
+}
+
+/* QUADRADO EM MOVIMENTO */
+.box{
+    width: 80px;
+    height: 80px;
+    background-color: #e6c109;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #e6c109;
+    cursor: pointer;
+    animation: moveBox 2s infinite alternate ease-in-out;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    color:#000;
+    font-size:16px;
+    user-select:none;
+}
+
+/* ANIMAÇÃO HORIZONTAL */
+@keyframes moveBox{
+    0% { transform: translateX(-120px); }
+    50% { transform: translateX(120px); }
+    100% { transform: translateX(-120px); }
+}
+
+/* NOME LUMINOSO */
+#nome{
+    font-size: 48px;
+    font-weight: bold;
+    margin-top: 40px;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align:center;
+    text-shadow:
+        0 0 5px #e6c109,
+        0 0 10px #e6c109,
+        0 0 20px #e6c109,
+        0 0 40px #e6c109;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{
+        text-shadow:
+            0 0 5px #e6c109,
+            0 0 10px #e6c109,
+            0 0 20px #e6c109,
+            0 0 40px #e6c109;
+    }
+    to{
+        text-shadow:
+            0 0 10px #ffd700,
+            0 0 20px #ffd700,
+            0 0 40px #ffd700,
+            0 0 80px #ffd700;
+    }
+}
+
+/* INSTRUÇÃO */
+#instrucao{
+    margin-top: 20px;
+    color:#ccc;
+    font-size:16px;
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box" id="box"></div>
+<div id="nome">LUMIGALVA</div>
+<div id="instrucao"></div>
+
+<script>
+const box = document.getElementById('box');
+const nome = document.getElementById('nome');
+
+let clicked = false;
+
+box.addEventListener('click', () => {
+    if(clicked) return; // evita múltiplos cliques
+    clicked = true;
+
+    // Mostrar o nome
+    nome.style.opacity = '1';
+
+    // Contagem de 5 segundos
+    let count = 5;
+    box.textContent = count;
+
+    const interval = setInterval(() => {
+        count--;
+        if(count > 0){
+            box.textContent = count;
+        } else {
+            clearInterval(interval);
+            box.textContent = "";
+            // Abrir o site
+            window.location.href = 'https://gabriel1387.github.io/Lumigalva/animt7.html';
+        }
+    }, 1000);
+});
+</script>
+
+</body>
+</html>
