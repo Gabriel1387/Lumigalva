@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre a LUMIGALVA</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:'Orbitron', sans-serif;
+            background:#111;
+            color:#fff;
+        }
+
+        header{
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:20px 40px;
+            background:rgba(10,10,10,0.7);
+            border-bottom:2px solid #e6c109;
+            flex-wrap:wrap;
+        }
+        .logo{
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .text{
+            font-size:24px;
+            text-shadow:0 0 10px #e6c109;
+            animation: glow 1.5s infinite alternate;
+        }
+
+        .box{
+            width:25px;
+            height:25px;
+            background:#e6c109;
+            border-radius:5px;
+            animation: moveBox 1s infinite alternate;
+        }
+
+        @keyframes moveBox{
+            from{transform:translateX(0);}
+            to{transform:translateX(30px);}
+        }
+
+        @keyframes glow{
+            from{text-shadow:0 0 10px #e6c109;}
+            to{text-shadow:0 0 25px #ffd700;}
+        }
+
+        nav a{
+            color:#fff;
+            margin-left:20px;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        nav a:hover{
+            color:#e6c109;
+        }
+
+
+       /* HERO */
+        .hero{
+            padding:80px 40px;
+            background:rgba(0,0,0,0.6);
+            margin:20px;
+            border-radius:10px;
+        }
+
+        .hero h1{
+            font-size:42px;
+        }
+
+        .hero p{
+            color:#ccc;
+            margin:20px 0;
+        }
+
+        /* BOTÃO */
+        .btn{
+            padding:12px 25px;
+            background:#e6c109;
+            color:#000;
+            border:none;
+            cursor:pointer;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            box-shadow:0 0 20px #e6c109;
+            transform:scale(1.05);
+        }
+
+        h1{
+            text-shadow:0 0 10px #e6c109;
+        }
+
+        .container{
+            padding:60px 40px;
+        }
+
+        p{
+            color:#ccc;
+            margin-top:20px;
+            max-width:700px;
+            line-height:1.6;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:30px;
+            padding:12px 25px;
+            background:#e6c109;
+            color:#000;
+            text-decoration:none;
+            border-radius:5px;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            box-shadow:0 0 20px #e6c109;
+            transform:scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <div class="text">LUMIGALVA -<= </div>
+        <div class="box"></div>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Sobre a empresa</h2>
+
+    <p>
+        A Lumigalva é especializada na fabricação de luminárias artesanais utilizando ferro e tubos galvanizados.
+        Nosso objetivo é unir design industrial, durabilidade e estilo moderno em cada peça.
+    </p>
+
+    <p>
+        Trabalhamos com projetos personalizados, onde você pode trazer sua ideia ou escolher entre nossos modelos.
+        Cada produto é feito com atenção aos detalhes, garantindo qualidade e exclusividade.
+    </p>
+
+    <p>
+        Transformamos ambientes com iluminação única e marcante.
+    </p>
+
+    <a href="animt7.html" class="btn">⬅ Voltar</a>
+</div>
+
+</body>
+</html>
