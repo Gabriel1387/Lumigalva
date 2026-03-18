@@ -24,6 +24,7 @@ body{
     height:100vh;
     overflow:hidden;
     flex-direction:column;
+    padding:20px;
 }
 
 /* QUADRADO EM MOVIMENTO */
@@ -91,6 +92,47 @@ body{
     font-size:16px;
     text-align:center;
 }
+
+/* RESPONSIVO */
+@media(max-width:768px){
+    .box{
+        width: 60px;
+        height: 60px;
+        font-size:14px;
+    }
+    #nome{
+        font-size: 36px;
+        margin-top: 20px;
+    }
+    #instrucao{
+        font-size:14px;
+    }
+    @keyframes moveBox{
+        0% { transform: translateX(-80px); }
+        50% { transform: translateX(80px); }
+        100% { transform: translateX(-80px); }
+    }
+}
+
+@media(max-width:480px){
+    .box{
+        width: 50px;
+        height: 50px;
+        font-size:12px;
+    }
+    #nome{
+        font-size:28px;
+        margin-top:15px;
+    }
+    #instrucao{
+        font-size:12px;
+    }
+    @keyframes moveBox{
+        0% { transform: translateX(-60px); }
+        50% { transform: translateX(60px); }
+        100% { transform: translateX(-60px); }
+    }
+}
 </style>
 </head>
 
@@ -98,7 +140,7 @@ body{
 
 <div class="box" id="box"></div>
 <div id="nome">LUMIGALVA</div>
-<div id="instrucao"></div>
+<div id="instrucao">Clique no quadrado para revelar o nome e abrir o site em 5 segundos</div>
 
 <script>
 const box = document.getElementById('box');
