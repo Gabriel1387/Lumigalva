@@ -43,6 +43,7 @@ body{
     color:#000;
     font-size:16px;
     user-select:none;
+    touch-action: manipulation; /* garante que toque funcione */
 }
 
 /* ANIMAÇÃO HORIZONTAL */
@@ -140,7 +141,7 @@ body{
 
 <div class="box" id="box"></div>
 <div id="nome">LUMIGALVA</div>
-<div id="instrucao">Clique no quadrado para revelar o nome e abrir o site em 5 segundos</div>
+<div id="instrucao"></div>
 
 <script>
 const box = document.getElementById('box');
@@ -148,8 +149,9 @@ const nome = document.getElementById('nome');
 
 let clicked = false;
 
-box.addEventListener('click', () => {
-    if(clicked) return; // evita múltiplos cliques
+// Função para ativar contagem e abrir site
+function activateBox(){
+    if(clicked) return;
     clicked = true;
 
     // Mostrar o nome
@@ -166,11 +168,14 @@ box.addEventListener('click', () => {
         } else {
             clearInterval(interval);
             box.textContent = "";
-            // Abrir o site
             window.location.href = 'https://gabriel1387.github.io/Lumigalva/animt7.html';
         }
     }, 1000);
-});
+}
+
+// Adiciona suporte para click e touch (celular)
+box.addEventListener('click', activateBox);
+box.addEventListener('touchstart', activateBox);
 </script>
 
 </body>
